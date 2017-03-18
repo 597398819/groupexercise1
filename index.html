@@ -1,9 +1,123 @@
-<!DOCTYPE html>
-
 <html>
 
+<head>
+    <meta charset="utf-8">
+    <title>Group 2 exercise</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <script src="echarts.min.js"></script>
+</head>
+
+<body>
+
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+
+            <h1> Group 2 Exercise </h1>
+
+            This is the first exercise from group 2.We show a complete example to from raw data set to web-based visualisations. The data set can be found in this
+            <a href="https://docs.google.com/spreadsheets/d/1qHt3SGT9uEWoUgCLPSFXeTxffyKR2JzTd_S_gc6diY8/edit#gid=54821065">Google Spreadsheet</a>.
+
+            <h2> 1999-2003 sex ratio of Candidates </h2>
+
+            <div class="row">
+                <div class="col-md-3">
+                    <p>
+                        First checkout the sex of each party. You can see that they have different sex ratio .You can also click "Absolute Number of Votes" to find more information.
+                    </p>
+                    <p>
+                        How?
+                        <ul>
+                            <li>
+                                Pivot table for winning candidates:
+                                <a href="https://docs.google.com/spreadsheets/d/1qHt3SGT9uEWoUgCLPSFXeTxffyKR2JzTd_S_gc6diY8/edit#gid=2031400800">pt Camp wining number</a>
+                            </li>
+                            <li>
+                                Pivot table for absolute number of votes:
+                                <a href="https://docs.google.com/spreadsheets/d/1qHt3SGT9uEWoUgCLPSFXeTxffyKR2JzTd_S_gc6diY8/edit#gid=1696651477">pt Camp abs vote</a>
+                            </li>
+                            <li>
+                                Generate code from pivot table result:
+                                <a href="https://docs.google.com/spreadsheets/d/1qHt3SGT9uEWoUgCLPSFXeTxffyKR2JzTd_S_gc6diY8/edit#gid=1718597788">st Camp to code</a>
+                            </li>
+                        </ul>
+                    </p>
+                </div>
+                <div class="col-md-5">
+                    <form action="">
+                        Choose the chart you want to see:
+                        <br>
+                        <label class="radio-inline"><input class="camp-evolution-type-selector" type="radio" name="camp" value="win" >sex ratio of candidates</label> &nbsp;&nbsp;&nbsp;
+                        <label class="radio-inline"><input class="camp-evolution-type-selector" type="radio" value="vote" name="camp">Absolute Number of Votes</label>
+                    </form>
+                    <div id="hkdce-camp-evolution" style="width: 600px;height:400px;"></div>
+                </div>
+            </div>
+
+           
+              
 
 
+            <h2>Mapping the parties</h2>
 
+            <div class="row">
+                <div class="col-md-4">
+                    <p>
+                        You can search online for GeoJSON files organised by the open data community. We use
+                        <a href="https://github.com/2blam/HK-geojson">2blam/HK-geojson</a> in this case. Right side is the map to show votes winned by "Other" camp (non pro-establishment and non pan-democracy) in the year 2015.
+                    </p>
+                    <p>
+                        Problems and future directions?
+                        <ul>
+                            <li>
+                                Try a Map with proper coastal lines so that the visual is better.
+                            </li>
+                            <li>
+                                Show other camps on the map?
+                            </li>
+                            <li>
+                                Calculate a custom metric and present on the map? e.g. "Political diversity"
+                            </li>
+                            <li>
+                                Animate by years?
+                            </li>
+                        </ul>
+                    </p>
+                    <p>
+                        How?
+                        <ul>
+                            <li>
+                                Pivot table by area:
+                                <a href="https://docs.google.com/spreadsheets/d/1qHt3SGT9uEWoUgCLPSFXeTxffyKR2JzTd_S_gc6diY8/edit#gid=1042164122">pt Area</a>
+                            </li>
+                            <li>
+                                Code generation by spreadsheet:
+                                <a href="https://docs.google.com/spreadsheets/d/1qHt3SGT9uEWoUgCLPSFXeTxffyKR2JzTd_S_gc6diY8/edit#gid=1616952630">st Area to code</a>
+                            </li>
+                        </ul>
+                    </p>
+                </div>
+                <div class="col-md-4">
+                    <div id="hkdce-map-2015" style="width: 600px;height:400px;"></div>
+                </div>
+            </div>
+
+           
+                                  
+
+        </div>
+    </div>
+
+</body>
 
 </html>
